@@ -2,25 +2,25 @@ import React from "react";
 import { useTasks } from "../context/TaskContext";
 
 function TaskFilter() {
-  const { filter, setFilter } = useTasks();  
+  const { filter, setFilter } = useTasks();   // aqui establecemos la busqueda del filtro cambiando el estado por el que queremos
 
   return (
-    <div className="task-filter">
+    <div className="task-filter">  
       <button
-        onClick={() => setFilter("all")}
-        className={filter === "all" ? "active" : ""}
+        onClick={() => setFilter("all")} 
+        className={filter === "all" ? "active" : ""} 
       >
         Todas
       </button>
       <button
-        onClick={() => setFilter("active")}
+        onClick={() => setFilter("active")} 
         className={filter === "active" ? "active" : ""}
       >
         Activas
       </button>
       <button
-        onClick={() => setFilter("completed")}
-        className={filter === "completed" ? "active" : ""}
+        onClick={() => setFilter("completed")} 
+        className={filter === "completed" ? "active" : ""} 
       >
         Completadas
       </button>
@@ -28,4 +28,4 @@ function TaskFilter() {
   );
 }
 
-export default TaskFilter;
+export default TaskFilter; 

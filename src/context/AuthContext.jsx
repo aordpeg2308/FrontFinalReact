@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext } from 'react';
 
 
@@ -11,20 +10,21 @@ export const useAuth = () => {
 
 
 export const AuthProvider = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Estado para gestionar si el usuario está autenticado o no
 
-  
+  // Función para iniciar sesión
   const login = (username) => {
-    if (username === 'capibara') {
+    if (username === 'capibara') { // Si el usuario no es Capibara no inicia
       setIsLoggedIn(true);
     }
   };
 
-  // Función de logout
+  // Función para cerrar sesión
   const logout = () => {
     setIsLoggedIn(false);
   };
 
+  
   return (
     <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
       {children}
